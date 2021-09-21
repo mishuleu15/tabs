@@ -15,19 +15,20 @@ const about = [
     id: 3,
     title: 'Goals',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae facilis necessitatibus alias itaque provident laboriosam quam excorrupti dolore doloribus assumenda a distinctio vitae, temporibusipsum repellendus tempore cumque omnis?',
+      'Perceived end knowledge certainly day sweetness why cordially. Ask quick six seven offer see among. Handsome met debating sir dwelling age material. As style lived he worse dried. Offered related so visitor we private removed. Moderate do subjects to distance. ',
   },
 ];
 
 const cardContainer = document.querySelector('.card-container');
 const btns = document.querySelectorAll('button');
+const h3 = document.querySelector('h3');
+const p = document.querySelector('.card-container_paragraph');
 
 function template(title, descr) {
-  const h3 = document.createElement('h3');
-  const p = document.createElement('p');
   h3.textContent = title;
   p.textContent = descr;
-  cardContainer.append(h3, p);
+  cardContainer.children[0].textContent = h3.innerHTML;
+  cardContainer.children[1].textContent = p.innerHTML;
 }
 
 about.forEach((el) => {
@@ -40,3 +41,6 @@ about.forEach((el) => {
     });
   });
 });
+
+// On Load
+template(about[1].title, about[1].description);
